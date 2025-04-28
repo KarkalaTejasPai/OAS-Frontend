@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuctionsComponent } from './components/auctions/auctions.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SellProductsComponent } from './components/sell-products/sell-products.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'app-sign-up',
         component: SignUpComponent
+    },
+    {
+        path: 'app-sell-products',
+        component: SellProductsComponent
     }
 ];
