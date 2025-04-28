@@ -6,7 +6,7 @@ import { SellProductsComponent } from './components/sell-products/sell-products.
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet, AuctionsComponent,SellProductsComponent],
+  imports: [HeaderComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
