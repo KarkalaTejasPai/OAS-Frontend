@@ -1,0 +1,28 @@
+.custom-nav-item {
+       margin-top:10px;
+       margin-right: 10px;
+       font-size: 20px;
+       /* Adjust the value as needed */
+}
+    
+.custom-margin-login {
+    margin-top: 15px;
+    margin-left: 45px; /* Adjust the value as needed */
+    margin-right: 20px; /* Reduced space */
+}
+
+.custom-margin-signup {
+    margin-top: 15px;
+    margin-left: 10px; /* Reduced space */
+    margin-right: 32px; /* Adjust the value as needed */
+}
+
+
+.search-margin {
+    margin-right: 50px; /* Adjust the value as needed */
+}
+
+.logo-margin {
+    margin-right: 150px;
+    font-size:20px; /* Adjust the value as needed */
+}
