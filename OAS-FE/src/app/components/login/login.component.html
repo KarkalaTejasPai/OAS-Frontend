@@ -1,10 +1,35 @@
 <div class="parent">
-    <div class="container" id="login-section">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username" required/>
-        <input type="password" id="password" placeholder="Password" required/>
-        <button id="login-btn">Login</button>
-        <p>Don't have an account? <a routerLink="/app-sign-up">Register here</a></p>
-        <p id="login-error-message" class="error-message"></p>
+  <div class="container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <!-- Username Field -->
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" [(ngModel)]="username" #usernameRef="ngModel" required placeholder="Username" />
       </div>
+      <div *ngIf="submitted && usernameRef.errors?.['required']" class="error">
+        Username is required.
+      </div>
+
+      <!-- Password Field -->
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" [(ngModel)]="password" #passwordRef="ngModel" required placeholder="Password" />
+      </div>
+      <div *ngIf="submitted && passwordRef.errors?.['required']" class="error">
+        Password is required.
+      </div>
+
+      <!-- Login Error -->
+      <div *ngIf="loginError" class="error">
+        {{ loginError }}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Signup Link -->
+    <p>Don't have an account? <a routerLink="/app-sign-up">Register here</a></p>
+  </div>
 </div>

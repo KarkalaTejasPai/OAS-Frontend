@@ -1,13 +1,48 @@
 <div class="parent">
-    <div class="container" id="login-section">
-        <h2>Sign Up</h2>
-        <input type="text" id="username" placeholder="Username" required />
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <input type="tel" pattern="[0-9]{10}" id="phone" name="phone" placeholder="Contact Number" required/>
-        <input type="password" id="password" placeholder="Password" required/>
-        <input type="password" id="confirm-password" placeholder="Confirm Password" required/>
-        <button id="signup-btn">Sign Up</button>
-        <p>Back To Login <a routerLink="/app-login">Click here</a></p>
-        <p id="signup-error-message" class="error-message"></p>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+      <!-- Username Field -->
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" [(ngModel)]="username" #usernameRef="ngModel" required placeholder="Username" />
       </div>
+      <div *ngIf="submitted && usernameRef.errors?.['required']" class="error">Username is required.</div>
+
+      <!-- Email Field -->
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" [(ngModel)]="email" #emailRef="ngModel" required email placeholder="Enter your email" />
+      </div>
+      <div *ngIf="submitted && emailRef.errors?.['required']" class="error">Email is required.</div>
+      <div *ngIf="submitted && emailRef.errors?.['email']" class="error">Please enter a valid email.</div>
+
+      <!-- Phone Field -->
+      <div class="input-group">
+        <i class="fas fa-phone"></i>
+        <input type="tel" name="phone" [(ngModel)]="phone" #phoneRef="ngModel" required pattern="^[0-9]{10}$" placeholder="Contact Number" />
+      </div>
+      <div *ngIf="submitted && phoneRef.errors?.['required']" class="error">Phone number is required.</div>
+      <div *ngIf="submitted && phoneRef.errors?.['pattern']" class="error">Phone number must be 10 digits.</div>
+
+      <!-- Password Field -->
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" [(ngModel)]="password" #passwordRef="ngModel" required minlength="6" placeholder="Password" />
+      </div>
+      <div *ngIf="submitted && passwordRef.errors?.['required']" class="error">Password is required.</div>
+      <div *ngIf="submitted && passwordRef.errors?.['minlength']" class="error">Password must be at least 6 characters.</div>
+
+      <!-- Confirm Password Field -->
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" #confirmPasswordRef="ngModel" required placeholder="Confirm Password" />
+      </div>
+      <div *ngIf="submitted && password !== confirmPassword" class="error">Passwords do not match.</div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Back To Login <a routerLink="/app-login">Click here</a></p>
+  </div>
 </div>
+
