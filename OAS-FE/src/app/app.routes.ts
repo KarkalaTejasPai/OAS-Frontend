@@ -7,7 +7,7 @@ import { SellProductsComponent } from './components/sell-products/sell-products.
 
 export const routes: Routes = [
     {
-        path: 'app-home',
+        path: '',
         component: HomeComponent
     },
     {
