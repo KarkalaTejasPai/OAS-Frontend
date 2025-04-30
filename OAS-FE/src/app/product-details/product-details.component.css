@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: relative;
+    width: 50%;
+    border: 5px solid white; /* Combined border */
+    padding: 10px;
+    background-color: white;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fits within the box */
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 22%; /* Adjust width to fit 4 images inside the border */
+    height: 100px; /* Ensure thumbnails are square */
+    cursor: pointer;
+    border: 2px solid #ddd;
+    padding: 5px;
+    transition: border-color 0.3s;
+    object-fit: cover; /* Ensure thumbnails are square */
+}
+
+.thumbnail:hover {
+    border-color: #007bff;
+}
+
+.details-container {
+    width: 50%;
+    padding-left: 20px;
+}
+
+button#startBiddingButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button#startBiddingButton:hover {
+    background-color: #0056b3;
+}
