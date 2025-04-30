@@ -1,0 +1,33 @@
+<div class="product-container">
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="product-info">
+        <h3>{{product.title}}</h3>
+        <p class="description">{{product.description}}</p>
+        <div class="price-info">
+          <div class="starting-price">
+            <span>Starting Price:</span>
+            <strong>₹{{product.startPrice}}</strong>
+          </div>
+          <div class="category">
+            <span>Category:</span>
+            <strong>{{product.category}}</strong>
+          </div>
+        </div>
+        <div class="auction-info">
+          <div class="status">
+            <span>Status: </span>
+            <strong>{{product.status}}</strong>
+          </div>
+          <div class="countdown">
+            <span>Time Remaining: </span>
+            <strong>{{product.remainingTime}}</strong>
+          </div>
+          <button class="bid-button" [disabled]="product.status !== 'Available'">
+            Place Bid
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
