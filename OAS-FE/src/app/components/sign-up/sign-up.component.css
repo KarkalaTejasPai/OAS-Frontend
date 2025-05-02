@@ -11,6 +11,7 @@
 }
 
 .container {
+    /* display: block !important; */
     width: 100%;
     max-width: 400px;
     background-color: #fff;
@@ -51,12 +52,13 @@ h2 {
     color: #888;
 }
 
-input {
+input, select {
     flex: 1;
     border: none;
     background: transparent;
     font-size: 1rem;
     outline: none;
+    color: #888;
 }
 
 button {
@@ -85,13 +87,5 @@ button:hover {
     .container {
         width: 90%;
         padding: 20px;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    button {
-        font-size: 1rem;
     }
 }
