@@ -4,10 +4,13 @@ import { AuctionsComponent } from './components/auctions/auctions.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SellProductsComponent } from './components/sell-products/sell-products.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductComponent } from './components/product/product.component';
+
 
 export const routes: Routes = [
     {
-        path: 'app-home',
+        path: '',
         component: HomeComponent
     },
     {
@@ -25,5 +28,14 @@ export const routes: Routes = [
     {
         path: 'app-sell-products',
         component: SellProductsComponent
+    },
+    {
+
+        path: 'app-product-details',
+        component: ProductDetailsComponent
+    },
+    {
+        path: 'app-product',
+        component: ProductComponent
     }
 ];
